@@ -20,7 +20,7 @@ router.get('/:id', (req, res, next) => {
     .where('id', id)
     .select(['id', 'title', 'description', 'price', 'item_image'])
     .then((data) => {
-      res.send(data[0])
+      res.json(data[0])
     })
 })
 
@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
     .returning(['id', 'title', 'description', 'price', 'item_image'])
     .insert({title: newPost.title, description: newPost.description, price: newPost.price, item_image: newPost.item_image})
     .then((data) => {
-      res.send(data[0])
+      res.json(data[0])
     })
 })
 
@@ -47,7 +47,7 @@ router.patch('/:id', (req, res, next) => {
     .where('id', id)
     .update({title: body.title, description: body.description, price: body.price, item_image: body.item_image})
     .then((data) => {
-      res.send(data[0])
+      res.json(data[0])
     })
 })
 

@@ -1,0 +1,19 @@
+<div>
+  <div ng-repeat="post in $ctrl.posts | orderBy: $ctrl.sorting | filter: filterSearch">
+    <div ng-model="$ctrl.post.title">
+      {{post.title}}
+    </div>
+    <div ng-model="$ctrl.post.image">
+      {{post.image_url}}
+    </div>
+    <div ng-model="$ctrl.post.description">
+      {{post.description}}
+    </div>
+    <div ng-model="$ctrl.post.price">
+      {{post.price}}
+    </div>
+    <div ng-model="$ctrl.post.created">
+      Posted: {{post.created_at}}
+    </div>
+  </div>
+</div>

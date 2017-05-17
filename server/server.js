@@ -53,6 +53,7 @@ if (process.env.NODE_ENV !== 'development') {
 
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '/../client')))
+app.use(express.static(path.join(__dirname, '/../', 'node_modules')))
 
 app.use('/api/index', require('./routes/index'))
 
