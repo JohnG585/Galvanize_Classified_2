@@ -1,24 +1,24 @@
 <div>
-  <!-- <div ng-repeat="post in $ctrl.posts"> -->
+  <div ng-repeat="post in $ctrl.posts">
     <div ng-model="$ctrl.post.title">
       {{post.title}}
     </div>
-        <a href="#" ui-sref="edit({ id: post.id })"> Edit Post</a>
     <div ng-model="$ctrl.post.image">
-      <img width = "200px" src="{{post.item_image}}">
+      <img width = "200px"src="{{post.item_image}}">
     </div>
     <div ng-model="$ctrl.post.description">
       {{post.description}}
+          <button ui-sref="edit({ id:post.id})">Edit Post</button>
     </div>
     <div ng-model="$ctrl.post.price">
       {{post.price}}
     </div>
-    <div ng-model="$ctrl.post.created">
-      Posted: {{post.created_at}}
+    <div ng-model="$ctrl.post.created_at">
+      Posted: {{post.created_at | date}}
     </div>
-    <button type="submit" ng-click="$ctrl.remove()">Delete</button>
-      <br><br>
+    <button ng-click="$ctrl.postDelete(post.id)">Delete Post</button>
   </div>
+  <br><br>
 </div>
 <br>
 Create New Post
@@ -29,7 +29,7 @@ Create New Post
   <input id="description" class="form-control" required name="description" ng-model="$ctrl.post.description"><br>
   <label for="price">Price</label>
   <input id="price" class="form-control" required name="price" ng-model="$ctrl.post.price"><br>
-  <label for="image">Image ULR</label>
+  <label for="image">Image URL</label>
   <input id="image" class="form-control" required name="image" ng-model="$ctrl.post.image">
   <button type="submit">Create Post</button>
 </form>

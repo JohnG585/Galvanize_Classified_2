@@ -31,9 +31,6 @@
         })
       }
 
-      // vm.remove = function(item) {
-        // let index = vm.posts.indexOf(item);
-        // vm.posts.splice(index, 1)
-      // }
+
     }
 })();
