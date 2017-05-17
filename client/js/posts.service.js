@@ -31,7 +31,9 @@
       }
       this.deletePost = function(id) {
         return $http.delete(`/api/index/${id}`).then((results) => {
-          return results.data
+          return $http.get('/api/index').then((result) => {
+            return result.data
+          })
         })
       }
 

@@ -30,7 +30,11 @@
           delete vm.post;
         })
       }
-
+      vm.postDelete = function(id) {
+        postService.deletePost(id).then((result) => {
+            vm.posts = result
+        })
+      }
 
     }
 })();
