@@ -1,10 +1,11 @@
 <div>
-  <div ng-repeat="post in $ctrl.posts">
+  <!-- <div ng-repeat="post in $ctrl.posts"> -->
     <div ng-model="$ctrl.post.title">
       {{post.title}}
     </div>
+        <a href="#" ui-sref="edit({ id: post.id })"> Edit Post</a>
     <div ng-model="$ctrl.post.image">
-      <img src="{{post.item_image}}">
+      <img width = "200px" src="{{post.item_image}}">
     </div>
     <div ng-model="$ctrl.post.description">
       {{post.description}}
@@ -15,8 +16,9 @@
     <div ng-model="$ctrl.post.created">
       Posted: {{post.created_at}}
     </div>
+    <button type="submit" ng-click="$ctrl.remove()">Delete</button>
+      <br><br>
   </div>
-  <br>
 </div>
 <br>
 Create New Post

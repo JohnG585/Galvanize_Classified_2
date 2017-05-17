@@ -1,0 +1,13 @@
+Edit Post
+<form name="$ctrl.editForm" ng-submit="$ctrl.editPost()">
+  <label for="title">Title</label>
+  <input id="title" class="form-control" required name="title" ng-model="$ctrl.post.title"><br>
+  <label for="description">Description</label>
+  <input id="description" class="form-control" required name="description" ng-model="$ctrl.post.description"><br>
+  <label for="price">Price</label>
+  <input id="price" class="form-control" required name="price" ng-model="$ctrl.post.price"><br>
+  <label for="image">Image ULR</label>
+  <input id="image" class="form-control" required name="image" ng-model="$ctrl.post.image">
+  <button type="submit">Create Post</button>
+  <a ui-sref="home"><button type="button">Go Back</button></a>
+</form>

@@ -12,6 +12,7 @@
 
     $stateProvider
       .state({name: 'home', url: '/', component: 'posts'})
+      // .state({name: 'edit', url: '/index/{id}/edit', component: 'edit'})
   }
 
 }());
