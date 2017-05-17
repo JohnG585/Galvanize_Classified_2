@@ -1,10 +1,10 @@
 <div>
-  <div ng-repeat="post in $ctrl.posts | orderBy: $ctrl.sorting | filter: filterSearch">
+  <div ng-repeat="post in $ctrl.posts">
     <div ng-model="$ctrl.post.title">
       {{post.title}}
     </div>
     <div ng-model="$ctrl.post.image">
-      {{post.image_url}}
+      <img src="{{post.item_image}}">
     </div>
     <div ng-model="$ctrl.post.description">
       {{post.description}}
@@ -16,4 +16,18 @@
       Posted: {{post.created_at}}
     </div>
   </div>
+  <br>
 </div>
+<br>
+Create New Post
+<form name="$ctrl.postForm" ng-submit="$ctrl.createPost()">
+  <label for="title">Title</label>
+  <input id="title" class="form-control" required name="title" ng-model="$ctrl.post.title"><br>
+  <label for="description">Description</label>
+  <input id="description" class="form-control" required name="description" ng-model="$ctrl.post.description"><br>
+  <label for="price">Price</label>
+  <input id="price" class="form-control" required name="price" ng-model="$ctrl.post.price"><br>
+  <label for="image">Image ULR</label>
+  <input id="image" class="form-control" required name="image" ng-model="$ctrl.post.image">
+  <button type="submit">Create Post</button>
+</form>

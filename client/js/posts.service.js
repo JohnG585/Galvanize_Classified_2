@@ -12,6 +12,11 @@
           return results.data
         })
       }
+      this.addPost = function(addPost) {
+        return $http.post('/api/index', addPost).then((result) => {
+          return result.data
+        })
+      }
 
 
     }
