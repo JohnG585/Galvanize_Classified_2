@@ -1,5 +1,15 @@
+<li>
+    <input ng-model = "filterSearch" type="search" placeholder="Filter">
+</li>
+
+<div>Sort by:
+</div>
+<select ng-model = "$ctrl.filtering" ng-change = "$ctrl.filterPosts()" id="sort">
+<option value = "price">Price</option>
+<option value = "date">Date Added</option>
+</select>
 <div>
-  <div ng-repeat="post in $ctrl.posts">
+  <div ng-repeat="post in $ctrl.posts | orderBy:$ctrl.sorted | filter: filterSearch">
     <div ng-model="$ctrl.post.title">
       {{post.title}}
     </div>

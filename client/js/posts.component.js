@@ -10,6 +10,9 @@
     postController.$inject = ['postService']
     function postController(postService) {
       const vm = this;
+      vm.filterPosts = filtered;
+      vm.filtering = "price";
+
       vm.$onInit = function() {
 
         postService.getPosts()
@@ -34,6 +37,18 @@
         postService.deletePost(id).then((result) => {
             vm.posts = result
         })
+      }
+      function filtered() {
+          switch(vm.filtering) {
+            case 'price':
+              vm.sorted = 'price';
+              break;
+            case 'date':
+              vm.sorted = 'created_at';
+              break;
+            default:
+              vm.sorted = "price"
+          }
       }
 
     }
